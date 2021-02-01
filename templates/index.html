@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bellybutton Biodiversity</title>
+  <link rel="shortcut icon" type="image/x-icon" href="\static\Images"/>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+
+  <!-- Bootstrap CSS and JS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <!-- D3 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+
+  <!-- rainbowvis JS -->
+  <script src="..\static\js\rainbowvis.js"></script>
+  
+  <!-- Plotly JS -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <!-- Custom CSS and JS -->
+  <!-- Defer the load of app.js so that the page 
+        can load first and then be processed by the script
+        (thanks Christina!)  -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+  <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='col-md-3'>
+        <div class="well">
+          <h5>SELECT Sample:</h5>
+          <!-- YOU WILL NEED TO ADD AN onchange EVENT TO THE DROP DOWN! -->          
+          
+          <select id="selDataset" onchange="optionChanged(this.value)">
+            <option value="">-- Select Test Subject ID --</option>
+          </select>
+          <p></p>
+        </div>        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3" style='margin-top: 40px;'>
+        <div class="card bg-royalblue card border-secondary">
+          <div class="card-header";'>
+            <h5 class="card-title" style='text-align: center; font-weight: bold; color: white;'>Subject Metadata</h5>
+          </div>
+          <div id="metadata" class="card-body bg-light"></div>
+        </div>
+      </div>      
+      <div class="col-md-6" >
+        <!--
+        <h6 style="font-weight: bold; text-align: center;">Top 10 Highest Concentrations</h6>
+        <h6 style="font-weight: bold; text-align: center;">for Individual Subject</h6>
+        -->
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-3">
+        <!--
+        <h6 style="font-weight: bold; text-align: center;">Belly Button Washing Frequency</h6>
+        <h6 style="font-weight: bold; text-align: center;">for Individual Subject</h6>
+        <p style="text-align: center;">Scrubs per Week</p>
+        -->
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <!-- <h6 style="font-weight: bold; text-align: center;">Relative OTU Concentrations for Individual Subject</h6> -->
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+
+</html>

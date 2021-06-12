@@ -1,6 +1,6 @@
 **Bellybutton Biodiversity**
 
-![](media/c7529a6d5751d36144bcc97819c316fc.png)
+![](media/Bellybutton_Biodiversity_Screenshot.jpg)
 
 Built a JavaScript interactive dashboard to splunk the [Belly Button
 Biodiversity

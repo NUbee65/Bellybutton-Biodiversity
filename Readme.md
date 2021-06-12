@@ -1,4 +1,4 @@
-**Bellybutton Biodiversity**
+##Bellybutton Biodiversity
 
 ![](media/Bellybutton_Biodiversity_Screenshot.jpg)
 
